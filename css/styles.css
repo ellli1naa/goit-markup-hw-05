@@ -746,7 +746,7 @@ footer {
     border-color: #4D5AE5;
 }
 
-.modal-input:focus .modal-icon {
+input:focus + svg {
     fill: #4D5AE5;
 }
 
@@ -784,7 +784,6 @@ footer {
     line-height: 1.17;
     letter-spacing: 0.04em;
     text-align: left;
-    display: flex;
     align-items: center;
     color: #8e8f99;
 }
@@ -801,7 +800,7 @@ footer {
     display: inline-flex;
 }
 
-.modal-check input:checked .checkbox-form {
+.modal-checkbox:checked + .checkbox-label > .checkbox-form {
     background-color: #404bbf;
     border: none;
     fill: #F4F4FD;
