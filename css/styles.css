@@ -539,7 +539,7 @@ footer {
 }
 
 .sub-footer {
-    margin-left: 80px;
+    margin-left: auto;
 }
 
 .subscribe {
@@ -567,9 +567,7 @@ footer {
     border: 1px solid #ffffff;
     border-radius: 4px;
     color: #ffffff;
-    margin-right: 10px;
     background-color: transparent;
-    outline: none;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
@@ -593,7 +591,6 @@ footer {
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 5px;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -620,12 +617,18 @@ footer {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
         visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .backdrop.is-open {
-    display: flex;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
 .modal {
@@ -687,12 +690,6 @@ footer {
     margin-bottom: 16px;
 }
 
-.modal-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
 .form-modal {
     margin-bottom: 8px;
 }
@@ -740,6 +737,7 @@ footer {
     left: 16px;
     transform: translateY(-50%);
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    fill: #2E2F42;
 }
 
 .modal-input:focus {
@@ -770,6 +768,10 @@ input:focus + svg {
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.modal-textarea::placeholder {
+    color: rgba(46, 47, 66, 0.4);
+}
+
 .modal-textarea:focus {
     border-color: #4D5AE5;
 }
@@ -798,6 +800,7 @@ input:focus + svg {
     justify-content: center;
     fill: transparent;
     display: inline-flex;
+    margin-right: 8px;
 }
 
 .modal-checkbox:checked + .checkbox-label > .checkbox-form {
@@ -808,14 +811,6 @@ input:focus + svg {
 
 .privacy-policy {
     color: #4d5ae5;
-}
-
-.checkbox-label .checkbox-icon {
-    width: 24px;
-    height: 24px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .submit-button {
@@ -830,13 +825,14 @@ input:focus + svg {
     color: #ffffff;
     padding: 16px 32px 16px 32px;
     gap: 10px;
-    border-radius: 4px 0px 0px 0px;
+    border-radius: 4px;
     opacity: 0px;
     background-color: #4d5ae5;
     border: none;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 0 auto;
 }
 
 .submit-button:hover,
